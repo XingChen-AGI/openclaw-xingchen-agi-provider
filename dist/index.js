@@ -41,7 +41,7 @@ var index_default = defineSingleProviderPluginEntry({
               cacheRead: 22e-4,
               cacheWrite: 0
             },
-            contextWindow: 192e3,
+            contextWindow: 1e6,
             maxTokens: 192e3
           }
         ]
