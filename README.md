@@ -44,11 +44,25 @@ export XINGCHEN_API_KEY="<your-xingchen-api-key>" # pragma: allowlist secret
 
 | Model ref                      | Input | Context | Max output |
 | ------------------------------ | ----- | ------- | ---------- |
-| `xingchen-agi/xing4.1-preview` | text  | 192,000 | 192,000    |
+| `xingchen-agi/xing4.1-preview` | text  | 1,024,000 | 128,000    |
 
 Provider id: `xingchen-agi`
 Base URL: `https://api-maas.teleai.com.cn/v1`
 API: OpenAI-compatible (`openai-completions`)
+
+## Pricing
+
+USD per 1M tokens. Public price card: https://xingchen-agi.github.io/pricing/
+
+| Xing4.1-Preview | List price | Limited-time offer (20% of list, through 2026-12-20) |
+| --- | --- | --- |
+| Input (cache miss) | $0.225 | $0.045 |
+| Input (cache hit) | $0.01125 | $0.00225 |
+| Output | $0.90 | $0.18 |
+
+The plugin's single-value `cost` fields carry the offer price currently in effect.
+They will be switched to the list prices when the offer ends on 2026-12-20.
+Cache-hit price is 5% of the corresponding input price; no peak/off-peak tiers apply.
 
 ## Package layout
 

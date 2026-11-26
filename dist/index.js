@@ -30,19 +30,21 @@ var index_default = defineSingleProviderPluginEntry({
             reasoning: true,
             input: ["text"],
             output: ["text"],
-            // Official USD pricing (released 2026-11-12), USD per 1M tokens.
-            // Off-peak (standard): input $0.11 / cache read $0.0022 / output $0.45
-            // Peak: $0.22 / $0.0045 / $0.90 (peak = 2x off-peak)
-            // Peak window (US Eastern): Mon-Fri 00:00-11:00; off-peak otherwise + weekend.
-            // Single-value cost fields hold the off-peak (standard) tier.
+            // Pricing (USD per 1M tokens), public price card:
+            // https://xingchen-agi.github.io/pricing/
+            // List: input $0.225 / cache read $0.01125 / output $0.90.
+            // Limited-time offer (20% of list, through 2026-12-20):
+            // input $0.045 / cache read $0.00225 / output $0.18.
+            // Single-value cost fields hold the offer price currently in effect;
+            // switch them to the list prices when the offer ends on 2026-12-20.
             cost: {
-              input: 0.11,
-              output: 0.45,
-              cacheRead: 22e-4,
+              input: 0.045,
+              output: 0.18,
+              cacheRead: 225e-5,
               cacheWrite: 0
             },
-            contextWindow: 1e6,
-            maxTokens: 192e3
+            contextWindow: 1024e3,
+            maxTokens: 128e3
           }
         ]
       })
